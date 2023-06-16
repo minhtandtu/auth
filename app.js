@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const User = require("./db/userModel");
 
-app.listen("3000", () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log("Server is running on 3000");
 });
 app.get("/", (request, response, next) => {
